@@ -1,4 +1,4 @@
-# Stock Position APP
+# Stock Position APP - v0.0.1
 
 - Items inventory app to provide a basic stock movement support.  
 - Learning about Clean Architecture/Hexagonal Architecture/Domain Driven Design 

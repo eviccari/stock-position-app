@@ -61,8 +61,8 @@ func (r *MySQLRepository) FindByItemIDAndFacilityID(itemID string, facilityID ui
 	q := "select * from products.stock_positions where item_id = ? and facility_id = ?"
 
 	row := r.db.QueryRow(q, itemID, facilityID)
-	err = row.Scan(&vo.ID, &vo.ItemID, &vo.FacilityID, &vo.OnHandQty, &vo.UnavlQty, &vo.PositionDate, &vo.TransactionID)
 
+	err = row.Scan(&vo.ID, &vo.ItemID, &vo.FacilityID, &vo.OnHandQty, &vo.UnavlQty, &vo.PositionDate, &vo.TransactionID)
 	if isEmpty := isEmptyError(err); isEmpty {
 		return vos.StockPosVO{}, nil
 	}

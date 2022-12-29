@@ -19,7 +19,7 @@ func NewStockService(repo adapters.Repository) *StockService {
 	}
 }
 
-func (ss *StockService) Update(sm vos.StockMovVO) (spVO vos.StockPosVO, err error) {
+func (ss *StockService) DoMovement(sm vos.StockMovVO) (spVO vos.StockPosVO, err error) {
 	spVO, err = ss.repo.FindByItemIDAndFacilityID(sm.ItemID, sm.FacilityID)
 	if err != nil {
 		return
